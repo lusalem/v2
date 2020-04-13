@@ -16,9 +16,9 @@
 使用方法：
 
 ```
-mkdir v2ray-agent  &&  \
-cd v2ray-agent && \
-curl https://raw.githubusercontent.com/hulisang/v2ray-sspanel-v3-mod_Uim-plugin/dev/install.sh -o install.sh && \
+mkdir v2  &&  \
+cd v2 && \
+curl https://raw.githubusercontent.com/lusalem/v2ray-sspanel-v3-mod_Uim-plugin/dev/install.sh -o install.sh && \
 chmod +x install.sh && \
 bash install.sh
 ```
