@@ -18,7 +18,7 @@
 ```
 mkdir v2  &&  \
 cd v2 && \
-curl https://raw.githubusercontent.com/lusalem/v2ray-sspanel-v3-mod_Uim-plugin/dev/install.sh -o install.sh && \
+curl https://raw.githubusercontent.com/lusalem/v2/dev/install.sh -o install.sh && \
 chmod +x install.sh && \
 bash install.sh
 ```
