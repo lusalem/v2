@@ -583,6 +583,12 @@ EOF
 
 # Install docker and docker compose
 install_docker(){
+    echo -e "system update and upgrade"
+    yum update -y
+    yum upgrade
+    echo -e "install toolbox"
+    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+    yum -y install -y net-tools bind-utils vim wget git curl unzip iperf3
     echo -e "Starting installing Docker "
     curl -fsSL https://get.docker.com -o get-docker.sh
     bash get-docker.sh
@@ -600,12 +606,15 @@ install_docker(){
     docker pull portainer/portainer
     echo -e "creat portainer volume"
     docker volume create portainer_data
-    echo -e "pull portainer docker 9000:9000"
-    docker run --name=portainer -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --restart=always portainer/portainer 
     echo -e "docker pull ssrmu"
     docker pull fanvinga/docker-ssrmu
     echo
     echo -e "Congratulations, V2ray/portainer/ssrmu/server install completed!"
+    echo
+    echo -e "download bbrplus tcp.sh"
+    wget --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh
+    echo
+    echo -e "docker run --name=portainer -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --restart=always portainer/portainer"
     echo
     echo "Enjoy it!"
     echo
