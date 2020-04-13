@@ -442,7 +442,7 @@ EOF
 version: '2'
 
 services:
-  v2ray:
+  sswiwi:
     image: ${docker_addresss}
     restart: always
     network_mode: "host"
@@ -527,7 +527,7 @@ EOF
 version: '2'
 
 services:
-  v2ray:
+  sswiwi:
     image: ${docker_addresss}
     restart: always
     network_mode: "host"
