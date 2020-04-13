@@ -584,11 +584,11 @@ EOF
 # Install docker and docker compose
 install_docker(){
     echo -e "system update and upgrade"
-    yum update -y
-    yum upgrade
+    apt -y update
+    apt -y upgrade
     echo -e "install toolbox"
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-    yum -y install -y net-tools bind-utils vim wget git curl unzip iperf3
+    apt-get install -y net-tools vim wget git dnsutils curl iperf3
     echo -e "Starting installing Docker "
     curl -fsSL https://get.docker.com -o get-docker.sh
     bash get-docker.sh
