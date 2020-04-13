@@ -595,12 +595,21 @@ install_docker(){
     service docker start
     echo "Start Docker-Compose "
     docker-compose pull
-    docker-compose up -d
     echo
-    echo -e "Congratulations, V2ray server install completed!"
+    echo -e "install portainer"
+    docker pull portainer/portainer
+    echo -e "creat portainer volume"
+    docker volume create portainer_data
+    echo -e "pull portainer docker 9000:9000"
+    docker run --name=portainer -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --restart=always portainer/portainer 
+    echo -e "docker pull ssrmu"
+    docker pull fanvinga/docker-ssrmu
+    echo
+    echo -e "Congratulations, V2ray/portainer/ssrmu/server install completed!"
     echo
     echo "Enjoy it!"
     echo
+    
 }
 
 install_check(){
