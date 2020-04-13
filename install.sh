@@ -137,8 +137,8 @@ pre_install_docker_compose(){
 
     # Set caddy cloudflare ddns email
     echo "cloudflare email for tls (optional)"
-    read -p "(Default hulisang@test.com):" cloudflare_email
-    [ -z "${cloudflare_email}" ]  && cloudflare_email="hulisang@test.com"
+    read -p "(Default lusalem@yandex.com):" cloudflare_email
+    [ -z "${cloudflare_email}" ]  && cloudflare_email="lusalem@yandex.com"
     echo
     echo "---------------------------"
     echo "cloudflare_email = ${cloudflare_email}"
@@ -178,8 +178,8 @@ pre_install_docker_compose(){
 
 
     echo "Which MUREGEX will be used"
-    read -p "(MUREGEX (Default %5m%id.%suffix):" MUREGEX
-    [ -z "${MUREGEX}" ] && MUREGEX="%5m%id.%suffix"
+    read -p "(MUREGEX (Default %suffix):" MUREGEX
+    [ -z "${MUREGEX}" ] && MUREGEX="%suffix"
     echo
     echo "---------------------------"
     echo "MUREGEX = ${MUREGEX}"
@@ -188,8 +188,8 @@ pre_install_docker_compose(){
 
 
     echo "Which MUSUFFIX will be used"
-    read -p "(MUSUFFIX (Default microsoft.com):" MUSUFFIX
-    [ -z "${MUSUFFIX}" ] && MUSUFFIX="microsoft.com"
+    read -p "(MUSUFFIX (Default bing.com):" MUSUFFIX
+    [ -z "${MUSUFFIX}" ] && MUSUFFIX="bing.com"
     echo
     echo "---------------------------"
     echo "MUSUFFIX = ${MUSUFFIX}"
@@ -212,7 +212,7 @@ pre_install_docker_compose(){
       # Set sspanel_url
     echo "Please sspanel_url"
     read -p "(There is no default value please make sure you input the right thing):" sspanel_url
-    [ -z "${sspanel_url}" ]
+    [ -z "${sspanel_url}" ]  && sspanel_url="https://go.sswiwi.com"
     echo
     echo "---------------------------"
     echo "sspanel_url = ${sspanel_url}"
@@ -221,7 +221,7 @@ pre_install_docker_compose(){
     # Set sspanel key
     echo "sspanel key"
     read -p "(There is no default value please make sure you input the right thing):" sspanel_key
-    [ -z "${sspanel_key}" ]
+    [ -z "${sspanel_key}" ]  && sspanel_key="SalemWebapi"
     echo
     echo "---------------------------"
     echo "sspanel_key = ${sspanel_key}"
@@ -324,8 +324,8 @@ pre_install_caddy(){
 
     # Set caddy v2ray path
     echo "caddy v2ray path"
-    read -p "(Default path: /v2ray):" v2ray_path
-    [ -z "${v2ray_path}" ] && v2ray_path="/v2ray"
+    read -p "(Default path: /sswiwi):" v2ray_path
+    [ -z "${v2ray_path}" ] && v2ray_path="/sswiwi"
     echo
     echo "---------------------------"
     echo "v2ray_path = ${v2ray_path}"
@@ -377,7 +377,7 @@ config_docker(){
 version: '2'
 
 services:
-  v2ray:
+  sswiwi:
     image: ${docker_addresss}
     restart: always
     network_mode: "host"
