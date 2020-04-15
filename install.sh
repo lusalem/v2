@@ -178,8 +178,8 @@ pre_install_docker_compose(){
 
 
     echo "Which MUREGEX will be used"
-    read -p "(MUREGEX (Default %suffix):" MUREGEX
-    [ -z "${MUREGEX}" ] && MUREGEX="%suffix"
+    read -p "(MUREGEX (Default %5m%id.%suffix):" MUREGEX
+    [ -z "${MUREGEX}" ] && MUREGEX="%5m%id.%suffix"
     echo
     echo "---------------------------"
     echo "MUREGEX = ${MUREGEX}"
