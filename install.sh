@@ -328,7 +328,6 @@ install_docker(){
     echo "Start Docker "
     service docker start
     echo "Start Docker-Compose "
-    docker-compose up -d
     echo
     echo -e "Congratulations, V2ray server install completed!"
     echo
@@ -409,7 +408,6 @@ update_image_v2ray(){
     echo "Pulling Images"
     docker-compose pull
     echo "Start Service"
-    docker-compose up -d
 }
 
 #show last 100 line log
@@ -446,7 +444,6 @@ update_config_v2ray(){
     esac
 
     echo "Start Service"
-    docker-compose up -d
 
 }
 # remove config
